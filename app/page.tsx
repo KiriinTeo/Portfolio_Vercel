@@ -5,7 +5,7 @@ import { Server, ShoppingBag, Container, Activity, GitBranch } from "lucide-reac
 import { motion } from "framer-motion"; // Importação do motor de animação
 import { SiPython, SiSpringboot, SiDocker, SiNodedotjs, SiTypescript, SiAngular, SiNextdotjs, SiPostgresql } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
-import { GithubStats } from "@/components/ui/github-stats";
+import { GithubStats, GithubStatsCard } from "@/components/ui/github-stats";
 
 export default function Home() {
   // Lista de stacks com as cores originais (Brand Colors)
@@ -50,7 +50,7 @@ export default function Home() {
             title="Eduardo Teodoro"
             description={
               <>
-                Engenheiro de Software Backend & Fullstack. Especialista em arquiteturas modulares 
+                Engenheiro de Software Backend & Fullstack. 
                 (Python e Java), integrações robustas e provisionamento Multi-Cloud (Oracle Certified).
               </>
             }
@@ -88,14 +88,11 @@ export default function Home() {
           {/* Card 3: Axioma Menor (4x1) - Mantido para não quebrar a sua matemática do grid */}
           <BentoGridItem
             className="md:col-span-4 md:row-span-1"
-            title="Axioma_Py - Motor de Dados"
-            description="API RESTful (FastAPI) com pipeline CI/CD robusta. Foco em estabilidade e conteinerização tática com Docker Engine no Linux."
             header={
               <div className="w-full h-full min-h-[6rem] bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center relative overflow-hidden group">
-                 <Container className="w-8 h-8 text-slate-300 mr-4 group-hover:text-white transition-colors" />
-                 <p className="text-zinc-500 text-xs font-mono group-hover:text-blue-400 transition-colors">
-                    $ docker-compose up -d --build
-                 </p>
+                 <GithubStatsCard />
+
+                 <div className= "absolute -bottom-5 -right-5 w-20 h-20 bg-blue-500/10 blur-2xl rounded-ful" />
               </div>
             }
           />
@@ -103,7 +100,7 @@ export default function Home() {
           {/* Card 4: GitHub Stats (4x2) */}
           <BentoGridItem
             className="md:col-span-4 md:row-span-2"
-            title="GitHub Stats"
+            title="Linguagens Github"
             description="Métricas em tempo real extraídas da API pública do GitHub."
             header={
               <div className="w-full h-full min-h-[6rem] bg-zinc-900 rounded-xl border border-white/5 flex items-center justify-center relative overflow-hidden group">
@@ -148,7 +145,11 @@ export default function Home() {
       {/* SEÇÃO 2: MARQUEE DE TECNOLOGIAS */}
       <section className="py-24 border-y border-white/5 bg-zinc-900/20 flex justify-center">
         <div className="flex flex-col items-center gap-12 max-w-5xl w-full px-4">
-          
+
+          <p className="text-3xl font-bold text-zinc-300" style={{ marginBottom: '1rem' }}>
+            Minhas Stacks
+          </p>
+
           {/* Linha 1 (5 Ícones) */}
           <div className="flex flex-wrap justify-center gap-12 md:gap-20">
             {topRow.map((tech, index) => (
